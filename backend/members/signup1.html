@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Member Signup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.29.2/sweetalert2.all.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+
+
+    <style>
+        .container {
+            margin-top: 100px;
+            width: 300px;
+        }
+
+        input,
+        select {
+            border-color: #0275d8 !important;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="register.php" id="form">
+            <div class="form-group">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name"
+                    autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter your phone"
+                    autocomplete="off" required>
+                <div class="invalid-feedback">
+                    Invalid phone number
+                </div>
+            </div>
+            <div class="form-group">
+                <select name="ward" id="ward" required class="form-control">
+                    <option selected disabled>Select a ward</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password1" class="form-control"
+                    placeholder="Enter your password" autocomplete="no-fill" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password2" id="password2" class="form-control"
+                    placeholder="Re-enter your password" autocomplete="no-fill" required>
+                <div class="invalid-feedback">
+                    Passwords doesn't match
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Signup" class="btn btn-primary btn-block">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    var select = '';
+    for (i = 1; i <= 41; i++) {
+        select += '<option value=' + i + '>' + i + '</option>';
+    }
+    $('#ward').append(select);
+
+    $("#form").submit(function (e) {
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+
+
+        if (document.getElementById("password1").value.length < 8) {
+            Swal.fire("Password must be 8-20 characters long");
+            return;
+        }
+
+        if (isNaN(document.getElementById("phone").value)) {
+            document.getElementsByClassName("invalid-feedback")[0].classList.add("d-block");
+            return;
+        }
+
+        if (document.getElementsByClassName("invalid-feedback")[0].classList.contains("d-block")) {
+            document.getElementsByClassName("invalid-feedback")[0].classList.remove("d-block");
+        }
+
+        if (document.getElementById("password1").value != document.getElementById("password2").value) {
+            document.getElementsByClassName("invalid-feedback")[1].classList.add("d-block");
+            return;
+        }
+
+        if (document.getElementsByClassName("invalid-feedback")[1].classList.contains("d-block")) {
+            document.getElementsByClassName("invalid-feedback")[1].classList.remove("d-block");
+        }
+
+
+        var form = $(this);
+        var url = form.attr('action');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function (data) {
+                if (data == "done") {
+                    Swal.fire(
+                        'Success!',
+                        'You have successfully registered!',
+                        'success'
+                    ).then((result) => {
+                        window.location.replace("index.php");
+                    });
+                }
+                else {
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!'
+                    });
+                }
+            },
+            error: function (data) {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!'
+                });
+            }
+        });
+
+
+    });
+</script>
