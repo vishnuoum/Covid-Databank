@@ -41,9 +41,6 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`id`, `name`, `phone`, `ward`, `password`, `hidden`) VALUES
-(49, 'Vishnu', '9567836661', 1, '7c222fb2927d828af22f592134e8932480637c0d', 'false'),
-(50, 'Shine', '9544997414', 7, '9f3979edce1f66dfc1038a1eb932d520db9fe968', 'false');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +61,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
