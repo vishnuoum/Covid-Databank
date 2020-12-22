@@ -1,5 +1,6 @@
 # Covid-Databank
-* A Covid dashboard built using HTML,CSS,Javascript,Bootstrap,etc.
+* A covid-19 dashboard built using HTML,CSS,Javascript,Bootstrap,etc.
+* Demo:https://zateart.com/covidchart/
 
 ## Usage Guide
 * Import the given sql files into sql server.
