@@ -11,15 +11,15 @@
 
 ## Screenshots
 **Login page**
-<br>
+<br />
 <kbd><img src="https://user-images.githubusercontent.com/57527558/102874717-d83b8900-4468-11eb-8237-b96114082ded.png"></kbd>
-<br>
+<br />
 **Admin Side**
-<br>
+<br />
 <kbd><img src="https://user-images.githubusercontent.com/57527558/102874712-d671c580-4468-11eb-8fdd-e229c0a227cb.png"></kbd>
-<br>
+<br />
 **Memeber Side**
-<br>
+<br />
 <kbd><img src="https://user-images.githubusercontent.com/57527558/102874716-d7a2f280-4468-11eb-9398-419701136a1c.png"></kbd>
-<br>
+<br />
 
