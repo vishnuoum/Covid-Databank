@@ -1,6 +1,8 @@
 # Covid-Databank
 * A covid-19 dashboard built using HTML,CSS,Javascript,Bootstrap,etc.
-* Demo:https://zateart.com/covidchart/
+* Memeber demo link : https://zateart.com/covidchart/
+* Admin demo link : https://zateart.com/covidchart/admin
+* Use phone : 1234567890, password : 12345678 
 
 ## Usage Guide
 * Import the given sql files into sql server.
