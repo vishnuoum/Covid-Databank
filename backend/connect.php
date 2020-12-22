@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "breakthechainUser";
-$password = "Y3dYJ86LCZ5hrGhL";
-$dbname = "breakthechainDB";
+$servername = "<hostname>";
+$username = "<username>";
+$password = "<password>";
+$dbname = "<database name>";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
