@@ -38,8 +38,6 @@ CREATE TABLE `remarks` (
 -- Dumping data for table `remarks`
 --
 
-INSERT INTO `remarks` (`id`, `text`, `date`) VALUES
-(2, 'Cases were low', '2020-08-29');
 
 --
 -- Indexes for dumped tables
